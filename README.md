@@ -1,5 +1,7 @@
 a random thing i made.
 
+this only works on desktop or pc vr.
+
 download: https://github.com/CoC-Fire/vrchat-osc-thing/raw/main/osc.exe
 
 i'll add something to disable the currently playing media checker later
