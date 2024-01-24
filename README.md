@@ -15,3 +15,5 @@ make sure u enabled osc in vrchat first for it to work https://user-images.githu
 if osc is enabled and its not working, try refreshing the program (press enter) or checking ur firewall settings
 
 when trying to run the .exe, if windows says it protected ur pc, simply click more info then click run anyway
+
+gpu doesnt work for amd gpus for some reason
