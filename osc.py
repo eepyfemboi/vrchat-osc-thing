@@ -32,6 +32,18 @@ newline_char = " "
 def send_chatbox_message(text: str):
     client.send_message("/chatbox/input", [text.strip().replace("\n", newline_char), True, False])
 
+async def get_network_usage():
+    # Function to get network usage
+    net_start = psutil.net_io_counters()
+    await asyncio.sleep(1)
+    net_end = psutil.net_io_counters()
+
+    start = net_start.bytes_sent + net_start.bytes_recv
+    end = net_end.bytes_sent + net_end.bytes_recv
+
+    speed = ((end - start) * 8) / 1e6
+    return "{:.2f}".format(speed)
+
 async def get_media_message():
     try:
         manager = winsdk.windows.media.control.GlobalSystemMediaTransportControlsSessionManager.request_async()
@@ -75,7 +87,7 @@ Nothing is playing
 """
     return message
 
-def get_stats_message():
+async def get_stats_message():
     ram = psutil.virtual_memory()
     try:
         gpu = GPUtil.getGPUs()[0]
@@ -84,13 +96,15 @@ def get_stats_message():
     except Exception as e:
         gpuname = "GPU"
         gpu = None
-    parts = str(psutil.cpu_percent(interval=1)).split(".")
+    parts = str(psutil.cpu_percent(interval=1, percpu=False)).split(".")
     if len(parts[1]) > 2: cpu = parts[0] + "." + parts[1][2:]
     elif len(parts[1]) == 1: cpu = parts[0] + ".0" + parts[1]
+    speed = await get_network_usage()
     message = f"""
 {get_processor_brand()}: {cpu}%
 {gpuname}: {gpu}%
 RAM Usage: {format_bytes(ram.used)}/{format_bytes(ram.total)} GB
+Network Usage: {speed} Mbps
 """
     return message
 
@@ -114,12 +128,12 @@ async def update_client_listener_async():
 
 async def main():
     while True:
-        message = get_stats_message()
+        message = await get_stats_message()
         send_chatbox_message(message)
         #await asyncio.sleep(1)
         message = await get_media_message()
         send_chatbox_message(message)
-        await asyncio.sleep(3)
+        await asyncio.sleep(2)
 
 loop = asyncio.new_event_loop()
 loop.create_task(main())
