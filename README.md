@@ -1,5 +1,7 @@
 a random thing i made.
 
+download: https://github.com/CoC-Fire/vrchat-osc-thing/raw/main/osc.exe
+
 i'll add something to disable the currently playing media checker later
 
 if u want to refresh the program just press enter on the console window it opens
