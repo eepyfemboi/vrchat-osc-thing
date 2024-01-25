@@ -1,6 +1,6 @@
 a random thing i made.
 
-this only works on desktop or pc vr.
+THERES NOW A QUEST VERSION :fire:
 
 download: https://github.com/CoC-Fire/vrchat-osc-thing/raw/main/osc.exe
 
