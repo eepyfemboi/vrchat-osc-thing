@@ -8,6 +8,7 @@ import asyncio
 import concurrent
 import concurrent.futures
 
+stuf = r'''
 ip = input("Enter your quest device's local IP address: ").strip().replace(" ", "")
 
 executor = concurrent.futures.ThreadPoolExecutor(max_workers=4)
@@ -29,14 +30,12 @@ async def get_media_manager():
     manager = manager.get_results()
     return manager
 
-#winsdk.windows.foundation.IAsyncAction.completed = winsdk.windows.foundation.AsyncStatus.COMPLETED
 
 newline_char = " "
 def send_chatbox_message(text: str):
     client.send_message("/chatbox/input", [text.strip().replace("\n", newline_char), True, False])
 
 async def get_network_usage():
-    # Function to get network usage
     net_start = psutil.net_io_counters()
     await asyncio.sleep(1)
     net_end = psutil.net_io_counters()
@@ -119,8 +118,6 @@ def get_processor_brand():
     except Exception as e:
         return None
 
-#manager = get_media_manager()
-
 def update_client_listener():
     while True:
         input()
@@ -133,7 +130,6 @@ async def main():
     while True:
         message = await get_stats_message()
         send_chatbox_message(message)
-        #await asyncio.sleep(1)
         message = await get_media_message()
         send_chatbox_message(message)
         await asyncio.sleep(2)
@@ -142,3 +138,5 @@ loop = asyncio.new_event_loop()
 loop.create_task(main())
 loop.create_task(update_client_listener_async())
 loop.run_forever()
+'''
+exec(stuf)
