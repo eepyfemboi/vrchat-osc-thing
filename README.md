@@ -2,6 +2,8 @@ a random thing i made.
 
 THERES NOW A QUEST VERSION :fire:
 
+the quest version doesnt work :sob:
+
 download: https://github.com/CoC-Fire/vrchat-osc-thing/raw/main/osc.exe
 
 i'll add something to disable the currently playing media checker later
