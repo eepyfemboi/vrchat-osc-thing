@@ -2,7 +2,7 @@ a random thing i made.
 
 THERES NOW A QUEST VERSION :fire:
 
-the quest version doesnt work :sob:
+the quest version doesnt work :sob: (currently trying to find ways to make windows not hate me)
 
 download: https://github.com/CoC-Fire/vrchat-osc-thing/raw/main/osc.exe
 
