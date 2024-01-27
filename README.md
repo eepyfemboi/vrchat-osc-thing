@@ -4,7 +4,7 @@ the quest version doesnt work :sob: (currently trying to find ways to make windo
 
 i think with the new version its signed or something idk
 
-download: https://github.com/CoC-Fire/vrchat-osc-thing/raw/main/osc1.exe
+download: https://github.com/CoC-Fire/vrchat-osc-thing/raw/main/osc.exe
 
 i'll add something to disable the currently playing media checker later
 
