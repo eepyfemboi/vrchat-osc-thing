@@ -6,6 +6,8 @@ i think with the new version its signed or something idk
 
 to download and install, go to https://github.com/CoC-Fire/vrchat-osc-thing/blob/main/osc_installer.bat and click the "download raw" button, then double click the downloaded file
 
+THE AUTO UPDATER IS BROKEN. IM TOO TIRED TO FIX IT RIGHT NOW. I JUST WANNA PLAY VRCHAT. CHECK BACK LATER FOR UPDATES.
+
 i'll add something to disable the currently playing media checker later
 
 if u want to refresh the program just press enter on the console window it opens
