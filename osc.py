@@ -12,7 +12,7 @@ import concurrent.futures
 
 executor = concurrent.futures.ThreadPoolExecutor(max_workers=4)
 client = udp_client.SimpleUDPClient("127.0.0.1", 9000)
-version = 3
+version = 4
 
 def refresh_client():
     global client
@@ -155,7 +155,7 @@ exit /b 0
 """
                 folder_path = os.path.expandvars("$userprofile/Downloads/vrc_osc")
                 path = folder_path + "/updater.bat"
-                with open(path) as file:
+                with open(path, "w") as file:
                     file.write(batch_script)
                 os.chdir(folder_path)
                 os.system(f"start \"{path}\"")
