@@ -18,7 +18,7 @@ if osc is enabled and its not working, try refreshing the program (press enter) 
 
 when trying to run it, if windows says it protected ur pc, simply click more info then click run anyway.
 
-if you get a notification about "threats detected", you may need to create an exception in windows defender
+if you get a notification about "threats detected", you may need to create an exception in windows defender, since pyinstaller compiles similar to malware
 
 to install manually, first download extract osc.zip, then open the folder, then run the "osc.exe" contained within the folder
 
