@@ -1,5 +1,6 @@
 import winreg
 import os
+import sys
 from pythonosc import *
 import winsdk.windows.media.control
 from pythonosc import udp_client
@@ -7,12 +8,13 @@ import psutil
 import GPUtil
 import requests
 import asyncio
+import time
 import concurrent
 import concurrent.futures
 
 executor = concurrent.futures.ThreadPoolExecutor(max_workers=4)
 client = udp_client.SimpleUDPClient("127.0.0.1", 9000)
-version = 4
+version = 6
 
 def refresh_client():
     global client
@@ -126,16 +128,17 @@ def update_client_listener():
         input()
         refresh_client()
 
-async def updater():
+def updater():
     while True:
         response = requests.get("https://raw.githubusercontent.com/CoC-Fire/vrchat-osc-thing/main/version.txt")
+        #print(response.text)
         if int(response.text) != version:
             confirmation = input("There's an update available! Would you like to install it? (y/n): ")
             if confirmation.strip().lower() == "y":
                 url = f"https://github.com/CoC-Fire/vrchat-osc-thing/releases/download/{response.text}/osc.zip"
                 batch_script = f"""
 @echo off
-set "downloadDir=%USERPROFILE%\Downloads\vrc_osc"
+set "downloadDir=%USERPROFILE%/Downloads/vrc_osc"
 set "zipFile=%downloadDir%\osc.zip"
 set "githubURL={url}"
 
@@ -159,13 +162,16 @@ exit /b 0
                     file.write(batch_script)
                 os.chdir(folder_path)
                 os.system(f"start \"{path}\"")
-                quit(0)
+                sys.exit()
             else:
                 print("OK! Simply enter \"y\" when you want to update!")
-        await asyncio.sleep(60)
+        time.sleep(60)
 
 async def update_client_listener_async():
     await asyncio.get_event_loop().run_in_executor(executor, lambda: update_client_listener())
+
+async def updater_async():
+    await asyncio.get_event_loop().run_in_executor(executor, lambda: updater())
 
 async def main():
     while True:
@@ -178,5 +184,5 @@ async def main():
 
 loop = asyncio.new_event_loop()
 loop.create_task(main())
-loop.create_task(updater())
+loop.create_task(updater_async())
 loop.run_forever()
