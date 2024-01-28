@@ -12,7 +12,7 @@ ip = input("Enter your quest device's local IP address: ")
 ip = ip.strip()
 ip = ip.replace(" ", "")
 
-executor = concurrent.futures.ThreadPoolExecutor(max_workers=4)
+executor = concurrent.futures.ThreadPoolExecutor(max_workers = 4)
 client = udp_client.SimpleUDPClient(ip, 9000)
 
 def refresh_client():
@@ -35,6 +35,7 @@ async def get_media_manager():
     return manager
 
 newline_char = " "
+
 def send_chatbox_message(text: str):
     text = text.strip()
     text = text.replace("\n", newline_char)
@@ -51,6 +52,7 @@ async def get_network_usage():
     net_total = end - start
     speed = (net_total * 8) / 1e6
     formatted = "{:.2f}".format(speed)
+
     return formatted
 
 async def get_media_message():
@@ -98,7 +100,7 @@ async def get_media_message():
         thing = f"[{current_time_minutes}:{current_time_seconds}/{total_time_minutes}:{total_time_seconds}]"
         message = f"""
 Free Music & No Ads
-https://cocfire.xyz/musicplayer
+https://ezmusic.net/
 
 {artist} - {title}
 {thing}
@@ -107,7 +109,7 @@ https://cocfire.xyz/musicplayer
         await asyncio.sleep(2)
         message = f"""
 Free Music & No Ads
-https://cocfire.xyz/musicplayer
+https://ezmusic.net/
 
 Nothing is playing
 """

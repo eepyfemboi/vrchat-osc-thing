@@ -72,7 +72,7 @@ async def get_media_message():
         thing = f"[{current_time_minutes}:{current_time_seconds}/{total_time_minutes}:{total_time_seconds}]"
         message = f"""
 Free Music & No Ads
-https://cocfire.xyz/musicplayer
+https://ezmusic.net/
 
 {artist} - {title}
 {thing}
@@ -81,7 +81,7 @@ https://cocfire.xyz/musicplayer
         await asyncio.sleep(2)
         message = f"""
 Free Music & No Ads
-https://cocfire.xyz/musicplayer
+https://ezmusic.net/
 
 Nothing is playing
 """
