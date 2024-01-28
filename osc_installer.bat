@@ -1,7 +1,7 @@
 @echo off
 set "downloadDir=%USERPROFILE%\Downloads\vrc_osc"
 set "zipFile=%downloadDir%\osc.zip"
-set "githubURL=https://github.com/CoC-Fire/vrchat-osc-thing/raw/main/osc.zip"
+set "githubURL=https://github.com/CoC-Fire/vrchat-osc-thing/releases/download/2/osc.zip"
 set "confirmationURL=https://user-images.githubusercontent.com/101527472/189733533-957f6e92-ebba-4c67-b857-f1abac9d0eb3.gif"
 set "shortcutName=VRChat OSC"
 set "oscExe=%downloadDir%"
@@ -22,7 +22,7 @@ if /i "%createexception%"=="y" (
 
 rem Check if the directory exists
 if not exist "%downloadDir%" (
-    echo Directory "%downloadDir%" does not exist. Downloading...
+    echo Directory "%downloadDir%" does not exist. Downloading and extracting...
 
     rem Create the directory
     mkdir "%downloadDir%"
@@ -32,8 +32,6 @@ if not exist "%downloadDir%" (
 
     rem Extract the contents using PowerShell
     powershell -Command "Expand-Archive -Path '%zipFile%' -DestinationPath '%downloadDir%' -Force"
-
-    echo Downloaded.
 )
 
 echo Would you like to create a start menu shortcut?
@@ -51,14 +49,14 @@ if /i "%createshortcut%"=="y" (
     ) > CreateShortcut.vbs
     cscript //nologo CreateShortcut.vbs
     del CreateShortcut.vbs
-
-    echo Start menu shortcut created.
+    
 )
 
 rem Ask the user to confirm OSC in VRChat
 echo Please confirm that you have OSC enabled in VRChat by checking this link (ctrl + click to open in browser): %confirmationURL% then press enter to continue
 set /p "confirmation=Confirm: "
 
+rem If the user confirms, switch directory and run osc.exe
 cd "%downloadDir%"
 start osc.exe
 
