@@ -12,7 +12,7 @@ import concurrent.futures
 
 executor = concurrent.futures.ThreadPoolExecutor(max_workers=4)
 client = udp_client.SimpleUDPClient("127.0.0.1", 9000)
-version = 2
+version = 3
 
 def refresh_client():
     global client
@@ -167,9 +167,6 @@ exit /b 0
 async def update_client_listener_async():
     await asyncio.get_event_loop().run_in_executor(executor, lambda: update_client_listener())
 
-async def updater_async():
-    await asyncio.get_event_loop().run_in_executor(executor, lambda: update_client_listener())
-
 async def main():
     while True:
         message = await get_stats_message()
@@ -181,5 +178,5 @@ async def main():
 
 loop = asyncio.new_event_loop()
 loop.create_task(main())
-loop.create_task(updater_async())
+loop.create_task(updater())
 loop.run_forever()
