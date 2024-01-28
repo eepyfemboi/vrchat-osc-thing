@@ -4,7 +4,7 @@ the quest version doesnt work :sob: (currently trying to find ways to make windo
 
 i think with the new version its signed or something idk
 
-download: https://github.com/CoC-Fire/vrchat-osc-thing/raw/main/osc.exe
+to download and install, go to https://github.com/CoC-Fire/vrchat-osc-thing/blob/main/osc_installer.ps1 and click the "download raw" button.
 
 i'll add something to disable the currently playing media checker later
 
@@ -16,10 +16,10 @@ make sure u enabled osc in vrchat first for it to work https://user-images.githu
 
 if osc is enabled and its not working, try refreshing the program (press enter) or checking ur firewall settings
 
-when trying to run the .exe, if windows says it protected ur pc, simply click more info then click run anyway.
+when trying to run it, if windows says it protected ur pc, simply click more info then click run anyway.
 
-if you get a notification about "threats detected", use this version instead: https://github.com/CoC-Fire/vrchat-osc-thing/raw/main/osc.zip
+if you get a notification about "threats detected", you may need to create an exception in windows defender
 
-to use the zip version, first extract the zip, then open the folder, then run the "osc.exe" contained within the folder
+to install manually, first download extract osc.zip, then open the folder, then run the "osc.exe" contained within the folder
 
 gpu doesnt work for amd gpus for some reason
