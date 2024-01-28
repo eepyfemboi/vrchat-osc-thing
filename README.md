@@ -4,7 +4,7 @@ the quest version doesnt work :sob: (currently trying to find ways to make windo
 
 i think with the new version its signed or something idk
 
-to download and install, go to https://github.com/CoC-Fire/vrchat-osc-thing/blob/main/osc_installer.ps1 and click the "download raw" button.
+to download and install, go to https://github.com/CoC-Fire/vrchat-osc-thing/blob/main/osc_installer.bat and click the "download raw" button, then double click the downloaded file
 
 i'll add something to disable the currently playing media checker later
 
