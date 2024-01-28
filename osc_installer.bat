@@ -8,7 +8,7 @@ set "oscExe=%downloadDir%"
 
 echo Since this is compiled with pyinstaller, and pyinstaller compiles similar to malware, creating a windows defender exception may be required.
 echo If you have already created an exception in windows defender, you may skip this step.
-echo If you would like to take the safe route, i would recommend installing the most recent version of python from python.org, then running the osc script directly from
+echo If you know what youre doing, i would recommend installing the most recent version of python from python.org, then running the osc script directly from
 echo the osc.py file on the github repo
 echo Keep in mind that you must run `pip install python-osc gputil psutil asyncio winsdk` for the script to work.
 echo The script will still attempt to run if you choose not to create an exception, but if you get a notification saying 'threats detected', you may need to create an exception.
