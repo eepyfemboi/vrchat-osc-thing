@@ -1,7 +1,7 @@
 @echo off
 set "downloadDir=%USERPROFILE%\Downloads\vrc_osc"
 set "zipFile=%downloadDir%\osc.zip"
-set "githubURL=https://github.com/CoC-Fire/vrchat-osc-thing/releases/download/5/osc.zip"
+set "githubURL=https://github.com/CoC-Fire/vrchat-osc-thing/releases/download/6/osc.zip"
 set "confirmationURL=https://user-images.githubusercontent.com/101527472/189733533-957f6e92-ebba-4c67-b857-f1abac9d0eb3.gif"
 set "shortcutName=VRChat OSC"
 set "oscExe=%downloadDir%"
